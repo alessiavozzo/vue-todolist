@@ -32,12 +32,12 @@
             </div>
 
             <!-- list -->
-            <ul>
+            <ul v-if="toDoTasks.length > 0">
                 <li v-for="(task,index) in toDoTasks">
 
                     <div class="task">
                         <div class="number" v-bind:class="{taskdone: task.done}" @click="checkTask(index)">
-                            {{index}}
+                            {{index + 1}}
                         </div>
                         <div class="text" v-bind:class="{done: task.done}" @click="checkTask(index)">
                             {{task.text}}
@@ -46,9 +46,17 @@
 
                     <button @click="removeTask(index)" class="remove-task-btn">
                         <i class="fa-solid fa-xmark"></i>
-                    </button>
+                    </button>                    
                 </li>
             </ul>
+
+            <!-- if the list is empty -->
+            <div class="nothing-to-do" v-else>
+                <p>Non hai nient'altro da fare oggi, vai al mare!</p>
+                <div class="image">
+                    <img src="https://www.ikea.com/it/it/images/products/strandoen-ombrellone-giallo-bianco-a-pois__1170586_pe892870_s5.jpg?f=s" alt="">
+                </div>
+            </div>
         </div>
 
 
