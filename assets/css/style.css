@@ -50,6 +50,22 @@
             justify-content: space-between;
             align-items: center;
 
+            >.task{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+
+                >.number{
+                    padding: 0.5rem;
+                    width: 2rem;
+                    text-align: center;
+                    background-color: darkgray;
+                    border-radius: 50%;
+                    color: white;
+                }
+            }
+
             >.remove-task-btn {
                 border-radius: 50%;
                 width: 2rem;
@@ -65,12 +81,9 @@
     }
 }
 
-}
+
 
 .done {
     text-decoration: line-through;
 }
 
-li {
-    display: flex;
-}
