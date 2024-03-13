@@ -5,6 +5,7 @@ createApp({
     data() {
         return {
             
+            newTask:"",
             toDoTasks:[
                 {
                     text: "fare la spesa",
@@ -42,8 +43,18 @@ createApp({
 
     methods:{
         removeTask(index){
-            console.log("delete", index);
+            //console.log("delete", index);
             this.toDoTasks.splice(index, 1)
+        },
+        addTask(){
+            //console.log(this.newTask);
+            //aggiungi all'array la nuova task inserita come TEXT dell'oggetto, done: false di default perchè se la sto aggiungendo è perchè devo ancora farla
+            this.toDoTasks.push({
+                text: this.newTask,
+                done: false
+            });
+            //svuota l'input
+            this.newTask="";
         }
     }
 }).mount('#app')
