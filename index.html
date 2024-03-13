@@ -14,14 +14,14 @@
 
         <!-- list -->
         <ul>
-            <li v-for="(task,index) in toDoTasks" v-bind:class="{done: task.done}">
+            <li v-for="(task,index) in toDoTasks" v-bind:class="{done: task.done}" @click="checkTask(index)">
                 {{task.text}}
                 <button @click="removeTask(index)">X</button>
             </li>
         </ul>
 
         <!-- input -->
-        <input type="text" placeholder="Aggiungi elementi alla lista" v-model="newTask">
+        <input type="text" placeholder="Aggiungi elementi alla lista" v-model="newTask" @keyup.enter="addTask()">
         <button  @click="addTask()">Aggiungi</button>
 
 

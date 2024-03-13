@@ -46,15 +46,25 @@ createApp({
             //console.log("delete", index);
             this.toDoTasks.splice(index, 1)
         },
+
         addTask(){
             //console.log(this.newTask);
             //aggiungi all'array la nuova task inserita come TEXT dell'oggetto, done: false di default perchè se la sto aggiungendo è perchè devo ancora farla
-            this.toDoTasks.push({
-                text: this.newTask,
-                done: false
-            });
-            //svuota l'input
+
+            if(this.newTask.trim().length > 3){
+                this.toDoTasks.push({
+                    text: this.newTask,
+                    done: false
+                });
+                //svuota l'input
+            }
             this.newTask="";
+        },
+
+        checkTask(index){
+            //console.log(this.toDoTasks[index]); 
+            this.toDoTasks[index].done = !this.toDoTasks[index].done;
+            console.log(this.toDoTasks[index].done);
         }
     }
 }).mount('#app')
