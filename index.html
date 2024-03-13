@@ -9,7 +9,17 @@
 </head>
 <body>
     
+    
+    <div id="app">
 
+        <!-- list -->
+        <ul>
+            <li v-for="task in toDoTasks" v-bind:class="{done: task.done}">{{task.text}}</li>
+        </ul>
+
+
+
+    </div>
 
 
 

@@ -4,6 +4,6 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: blue;
+.done{
+    text-decoration: line-through;
 }
