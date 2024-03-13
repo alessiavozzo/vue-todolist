@@ -5,7 +5,7 @@ createApp({
     data() {
         return {
             
-            newTask:"",
+            newTask: null,
             toDoTasks:[
                 {
                     text: "fare la spesa",
@@ -50,21 +50,21 @@ createApp({
         addTask(){
             //console.log(this.newTask);
             //aggiungi all'array la nuova task inserita come TEXT dell'oggetto, done: false di default perchè se la sto aggiungendo è perchè devo ancora farla
-
+            
             if(this.newTask.trim().length > 3){
                 this.toDoTasks.push({
                     text: this.newTask,
                     done: false
                 });
-                //svuota l'input
             }
+            //svuota l'input
             this.newTask="";
         },
 
         checkTask(index){
-            //console.log(this.toDoTasks[index]); 
             this.toDoTasks[index].done = !this.toDoTasks[index].done;
-            console.log(this.toDoTasks[index].done);
+            //console.log(this.toDoTasks[index].done);           
         }
-    }
+    },
+    
 }).mount('#app')

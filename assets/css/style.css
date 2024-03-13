@@ -7,3 +7,6 @@
 .done{
     text-decoration: line-through;
 }
+li{
+    display: flex;
+}
