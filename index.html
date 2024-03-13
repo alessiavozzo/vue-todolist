@@ -14,7 +14,10 @@
 
         <!-- list -->
         <ul>
-            <li v-for="task in toDoTasks" v-bind:class="{done: task.done}">{{task.text}}</li>
+            <li v-for="(task,index) in toDoTasks" v-bind:class="{done: task.done}">
+                {{task.text}}
+                <button @click="removeTask(index)">X</button>
+            </li>
         </ul>
 
 
