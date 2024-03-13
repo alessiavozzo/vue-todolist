@@ -30,6 +30,13 @@
         >.add-task-btn {
             padding: 0.5rem;
             border-radius: 10px;
+            cursor: pointer;
+            background-color: lightcoral;
+            color: white;
+
+            &:hover{
+                background-color: rgb(240, 113, 113);
+            }
         }
 
         >input {
@@ -85,5 +92,8 @@
 
 .done {
     text-decoration: line-through;
+}
+.taskdone{
+    background-color: green!important;
 }
 

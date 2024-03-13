@@ -36,7 +36,7 @@
                 <li v-for="(task,index) in toDoTasks">
 
                     <div class="task">
-                        <div class="number">
+                        <div class="number" v-bind:class="{taskdone: task.done}" @click="checkTask(index)">
                             {{index}}
                         </div>
                         <div class="text" v-bind:class="{done: task.done}" @click="checkTask(index)">
