@@ -22,13 +22,13 @@
 
         <div class="card">
             <!-- title -->
-            <h1>To do list</h1>
+            <h1> To do list </h1>
 
             <!-- input -->
             <div class="add-task">
                 <input type="text" placeholder="Aggiungi elementi alla lista" v-model="newTask"
                     @keyup.enter="addTask()">
-                <button type="button" @click="addTask()" class="add-task-btn">Aggiungi</button>
+                <button type="button" @click="addTask()" class="add-task-btn">+</button>
             </div>
 
             <!-- list -->
@@ -41,7 +41,7 @@
                         </div>
                         <div class="text" v-bind:class="{done: task.done}" @click="checkTask(index)">
                             {{task.text}}
-                        </div>
+                        </div>                        
                     </div>
 
                     <button @click="removeTask(index)" class="remove-task-btn">

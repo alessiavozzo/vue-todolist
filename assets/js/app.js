@@ -65,6 +65,8 @@ createApp({
             this.toDoTasks[index].done = !this.toDoTasks[index].done;
             //console.log(this.toDoTasks[index].done);           
         }
-    },
+    }
     
 }).mount('#app')
+
+
