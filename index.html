@@ -36,17 +36,29 @@
                 <li v-for="(task,index) in toDoTasks">
 
                     <div class="task">
+                        <!-- number -->
                         <div class="number" v-bind:class="{taskdone: task.done}" @click="checkTask(index)">
                             {{index + 1}}
                         </div>
+                        <!-- task text -->
                         <div class="text" v-bind:class="{done: task.done}" @click="checkTask(index)">
                             {{task.text}}
-                        </div>                        
+                        </div>   
+                        <!-- edit text -->      
+                        <div class="edit-text" v-if="editedTaskIndex === index">
+                            <input type="text" v-model="editedTask" @keyup.enter="confirmEditTask(task)">
+                        </div>               
                     </div>
 
-                    <button @click="removeTask(index)" class="remove-task-btn">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>                    
+                    <!-- buttons -->
+                    <div class="buttons">
+                        <button @click="editTask(task, index)" class="edit-btn btn">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button @click="removeTask(index)" class="remove-task-btn btn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>        
+                    </div>
                 </li>
             </ul>
 

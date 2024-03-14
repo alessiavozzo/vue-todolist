@@ -102,6 +102,7 @@
                 justify-content: center;
                 gap: 1rem;
                 width: 100%;
+                position: relative;
 
                 >.number{
                     padding: 0.5rem;
@@ -118,20 +119,49 @@
                     width: 100%;
                     cursor: pointer;
                 }
+
+                >.edit-text{
+                    input{
+                        position: absolute;
+                        left: 11%;
+                        top: 20%;
+
+                        &:focus{
+                            outline-color: orange;
+                        }
+                    }
+                }
             }
 
-            >.remove-task-btn {
-                border-radius: 50%;
-                width: 2rem;
-                aspect-ratio: 1 / 1;
-                border: none;
-                background-color: rgba(255, 0, 0, 0.616);
-                color: white;
-                font-size: 1.1rem;
-                cursor: pointer;
+            >.buttons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
 
-                &:hover{
-                    background-color: red;
+                .btn {
+                    border-radius: 50%;
+                    width: 2rem;
+                    aspect-ratio: 1 / 1;
+                    border: none;                    
+                    color: white;
+                    font-size: 1.1rem;
+                    cursor: pointer;                    
+                    
+                    &.edit-btn{
+                        background-color: orange;
+                        &:hover{
+                            background-color: orangered;
+                        }
+                    }
+
+                    &.remove-task-btn{
+                        background-color: rgba(255, 0, 0, 0.616);
+                        &:hover{
+                            background-color: red;
+                        }
+                    }
+                    
                 }
             }
 

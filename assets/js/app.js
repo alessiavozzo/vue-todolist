@@ -3,8 +3,9 @@ const { createApp } = Vue
 
 createApp({
     data() {
-        return {
-            
+        return {            
+            editedTaskIndex:null,
+            editedTask:null,
             newTask: null,
             toDoTasks:[
                 {
@@ -64,6 +65,26 @@ createApp({
         checkTask(index){
             this.toDoTasks[index].done = !this.toDoTasks[index].done;
             //console.log(this.toDoTasks[index].done);           
+        },
+
+        editTask(task, index){
+            this.editedTaskIndex = index;
+            this.editedTask = task.text;
+            //console.log(index);
+            //this.editedTask = task.text
+            //console.log(this.editedTask);
+        },
+
+        confirmEditTask(task){
+            if (this.editedTask !== task.text) {
+                task.text = this.editedTask;   
+                this.editedTask = "";
+                this.editedTaskIndex ="";     
+            }
+            else{
+                this.editedTask = "";
+                this.editedTaskIndex ="";  
+            }
         }
     }
     
